@@ -10,4 +10,4 @@ class TestEodLoader(TestCase):
     def test_extract_close_from_response_returns_expected_value(self):
         loader = EodLoader([])
         close_price = loader.extract_close_from_response(self.json)
-        self.assertEquals(close_price, 170.77)
+        self.assertEqual(close_price, 170.77)
