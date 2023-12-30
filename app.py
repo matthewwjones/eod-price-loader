@@ -1,6 +1,6 @@
 import logging
 
-from eodpriceloader.loader.eodloader import EodLoader
+from load.eodloader import EodLoader
 
 
 class App:
