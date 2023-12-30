@@ -1,3 +1,4 @@
+import json
 import logging
 
 
@@ -10,3 +11,8 @@ class EodLoader:
 
     def load_prices(self):
         self.log.info(f"Loading prices for {len(self.instrument_codes)} instrument codes.")
+
+    @staticmethod
+    def extract_close_from_response(response):
+        response_json = json.loads(response)
+        return response_json[0]['close']
