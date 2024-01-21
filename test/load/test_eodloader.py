@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from load.eodloader import EodLoader
+from src.load.eodloader import EodLoader
 
 
 class TestEodLoader(TestCase):

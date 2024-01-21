@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from config.instrumentcodeloader import InstrumentCodeLoader
+from src.config.instrumentcodeloader import InstrumentCodeLoader
 
 
 class TestInstrumentCodeLoader(TestCase):
@@ -15,8 +15,7 @@ class TestInstrumentCodeLoader(TestCase):
         loader = InstrumentCodeLoader(self.empty_instrument_codes_file)
         self.assertEqual(loader.load_instrument_codes(), [])
 
-    def test_load_instrument_codes_returns_expected_list2(self):
-        loader = InstrumentCodeLoader('invalid-path')
+    def test_load_instrument_codes_raises_exception_for_invalid_path(self):
         with self.assertRaises(Exception) as context:
-            loader.load_instrument_codes()
+            InstrumentCodeLoader('invalid-path').load_instrument_codes()
         self.assertIn('File invalid-path does not exist.', str(context.exception))
