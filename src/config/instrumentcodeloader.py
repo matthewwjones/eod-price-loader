@@ -8,7 +8,7 @@ class InstrumentCodeLoader:
         self.instrument_codes_file = instrument_codes_file
 
     def load_instrument_codes(self):
-        self.log.info(f"Loading instrument codes from {self.instrument_codes_file}...")
+        self.log.info(f"Loading instrument codes from {self.instrument_codes_file}")
         try:
             with open(self.instrument_codes_file) as file:
                 instruments = [line.rstrip() for line in file]
