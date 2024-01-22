@@ -25,6 +25,7 @@ class EodLoader:
         self.log.info(f'Loading EOD price for {instrument} from {url}')
         try:
             response = requests.get(url).json()
+            self.log.info(f"Fetched {response}")
             return self.extract_close_from_response(response)
         except Exception as e:
             self.log.exception(f'Error loading price for instrument {instrument} - {e}')
